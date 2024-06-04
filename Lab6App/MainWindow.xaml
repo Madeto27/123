@@ -1,0 +1,61 @@
+﻿<Window x:Class="Lab6App.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Lab6App"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="100"/>
+            <ColumnDefinition Width="200"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="2*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <Button Content="Add Patient" Grid.Column="0" Width="100" Height="50" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" Click="Add_Patient"/>
+        <Button Content="Remove Patient" Grid.Column="0" Width="100" Height="50" HorizontalAlignment="Left" Margin="0,55,0,0" VerticalAlignment="Top" Click="Remove_Patient"/>
+        <Button Content="Find Patient" Grid.Column="0" Width="100" Height="50" HorizontalAlignment="Left" Margin="0,110,0,0" VerticalAlignment="Top" Click="Find_Patient"/>
+        <Button Content="Show Patients" Grid.Column="0" Width="100" Height="50" HorizontalAlignment="Left" Margin="0,165,0,0" VerticalAlignment="Top" Click="Show_Patients"/>
+        <Button Content="Show Doctors" Grid.Column="0" Width="100" Height="50" HorizontalAlignment="Left" Margin="0,220,0,0" VerticalAlignment="Top" Click="Show_Doctors"/>
+        <Button Content="Preset" Grid.Column="0" Width="100" Height="50" HorizontalAlignment="Left" Margin="0,275,0,0" VerticalAlignment="Top" Click="Preset"/>
+
+        <TextBox x:Name="Firstname" Grid.Column="1" HorizontalAlignment="Left" Margin="0,0,0,0" TextWrapping="Wrap" Text="Firstname" VerticalAlignment="Top" Width="120" Visibility="Hidden"/>
+        <TextBox x:Name="Lastname" Grid.Column="1" HorizontalAlignment="Left" Margin="0,25,0,0" TextWrapping="Wrap" Text="Lastname" VerticalAlignment="Top" Width="120" Visibility="Hidden"/>
+
+        <TextBox x:Name="DoctorFirstname" Grid.Column="1" HorizontalAlignment="Left" Margin="0,50,0,0" TextWrapping="Wrap" Text="Doctor" VerticalAlignment="Top" Width="120" Visibility="Hidden"/>
+        <TextBox x:Name="DoctorLastname" Grid.Column="1" HorizontalAlignment="Left" Margin="0,75,0,0" TextWrapping="Wrap" Text="Doctor" VerticalAlignment="Top" Width="120" Visibility="Hidden"/>
+        <TextBox x:Name="Address" Grid.Column="1" HorizontalAlignment="Left" Margin="0,100,0,0" TextWrapping="Wrap" Text="Address" VerticalAlignment="Top" Width="120" Visibility="Hidden"/>
+        <Button x:Name="Commit1" Grid.Column="1" HorizontalAlignment="Left" Margin="0,125,0,0" Content="Commit" VerticalAlignment="Top" Visibility="Hidden" Click="Commit_Patient"/>
+
+        <TextBox x:Name="DELETE" Grid.Column="1" HorizontalAlignment="Left" Margin="0,50,0,0" TextWrapping="Wrap" Text="Input *DELETE*" VerticalAlignment="Top" Width="120" Visibility="Hidden"/>
+        <Button x:Name="Commit2" Grid.Column="1" HorizontalAlignment="Left" Margin="0,75,0,0" Content="Delete" VerticalAlignment="Top" Visibility="Hidden" Click="Commit_Delete"/>
+
+        <TextBox x:Name="DocFirstnameBox" Grid.Column="1" HorizontalAlignment="Left" Margin="0,0,0,0" TextWrapping="Wrap" Text="Doctor's Firstname" VerticalAlignment="Top" Width="120" Visibility="Hidden"/>
+        <TextBox x:Name="DocLastnameBox" Grid.Column="1" HorizontalAlignment="Left" Margin="0,25,0,0" TextWrapping="Wrap" Text="Doctor's Lastname" VerticalAlignment="Top" Width="120" Visibility="Hidden"/>
+        <Button x:Name="Commit3" Grid.Column="1" HorizontalAlignment="Left" Margin="0,50,0,0" Content="Search" VerticalAlignment="Top" Visibility="Hidden" Click="Commit_Doctors"/>
+
+        <Button x:Name="Commit4" Grid.Column="1" HorizontalAlignment="Left" Margin="0,76,0,0" Content="Commit" VerticalAlignment="Top" Visibility="Hidden" Click="Commit_Find"/>
+        <TextBlock x:Name="TFirstname" Grid.Column="2" HorizontalAlignment="Left" Margin="5,20,0,0" TextWrapping="Wrap" Text="Firstname" VerticalAlignment="Top" Width="120" Visibility="Hidden"/>
+        <Label x:Name="labFN" Grid.Column="2" HorizontalAlignment="Left" Margin="0,0,0,0"  Content="Firstname" VerticalAlignment="Top" Width="120" Visibility="Hidden" FontWeight="Bold" />
+        <TextBlock x:Name="TLastname" Grid.Column="2" HorizontalAlignment="Left" Margin="5,45,0,0" TextWrapping="Wrap" Text="Lastname" VerticalAlignment="Top" Width="120" Visibility="Hidden"/>
+        <Label x:Name="labLN" Grid.Column="2" HorizontalAlignment="Left" Margin="0,26,0,0"  Content="Lastname" VerticalAlignment="Top" Width="120" Visibility="Hidden" FontWeight="Bold"/>
+        <TextBlock x:Name="TDoctor" Grid.Column="2" HorizontalAlignment="Left" Margin="5,70,0,0" TextWrapping="Wrap" Text="Doctor" VerticalAlignment="Top" Width="120" Visibility="Hidden"/>
+        <Label x:Name="labDN" Grid.Column="2" HorizontalAlignment="Left" Margin="0,52,0,0"  Content="Doctor" VerticalAlignment="Top" Width="120" Visibility="Hidden" FontWeight="Bold"/>
+        <TextBlock x:Name="TAddress" Grid.Column="2" HorizontalAlignment="Left" Margin="5,120,0,0" TextWrapping="Wrap" Text="Address" VerticalAlignment="Top" Width="120" Visibility="Hidden"/>
+        <Label x:Name="labAN" Grid.Column="2" HorizontalAlignment="Left" Margin="0,102,0,0"  Content="Address" VerticalAlignment="Top" Width="120" Visibility="Hidden" FontWeight="Bold"/>
+        <TextBlock x:Name="TPatientID" Grid.Column="2" HorizontalAlignment="Left" Margin="5,95,0,0" TextWrapping="Wrap" Text="PatientID" VerticalAlignment="Top" Width="120" Visibility="Hidden"/>
+        <Label x:Name="labPID" Grid.Column="2" HorizontalAlignment="Left" Margin="0,78,0,0"  Content="PatientID" VerticalAlignment="Top" Width="120" Visibility="Hidden" FontWeight="Bold"/>
+        
+        
+        <DataGrid x:Name="PatientsGridKey" Grid.Column="2"  Margin="0,0,0,0" HorizontalAlignment="Left" Visibility="Hidden"/>
+        <DataGrid x:Name="PatientsGridValue" Grid.Column="3"  Margin="0,0,0,0" HorizontalAlignment="Left" Visibility="Hidden"/>
+
+
+    </Grid>
+</Window>
